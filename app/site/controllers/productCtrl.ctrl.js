@@ -24,8 +24,11 @@
         ctrl.open = open;
 
         ctrl.deleteProduct = deleteProduct;
+        ctrl.addToCart=addToCart;
 
-
+        function addToCart(product){
+            ctrl.cart.push(product);
+        }
 
 
         function addProduct() {
