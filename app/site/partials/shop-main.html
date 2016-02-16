@@ -67,7 +67,7 @@
 
 
 
-
+  
 
 
 <!--//PRODUCTS START//-->
@@ -83,7 +83,7 @@
               {{product.name | uppercase}}
             </div>
             <div class="product-price">
-              {{product.price | currency}}
+             <span> {{product.price | currency}} <a class="pull-right" ng-click="ctrl.addToCart(product)">add to cart</a>
             </div>
           </div>
         </div>
