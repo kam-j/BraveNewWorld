@@ -68,20 +68,21 @@
 <!--//PRODUCTS START//-->
 <section class="product-view">
   <div class="row">
-
-      <div class="col-xs-4 col-md-4">
-        <div class="product-img">
-          <img src="assets/img/notebook1.jpg">
+    <div ng-repeat="product in ctrl.productSrv.products">
+        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+          <div class="col-sm-4">
+            <div class="product-img">
+              <img ng-src="assets/img/{{product.image}}">
+            </div>
+            <div class="product-name">
+              {{product.name | uppercase}}
+            </div>
+            <div class="product-price">
+              {{product.price | currency}}
+            </div>
+          </div>
         </div>
-        <div class="product-name">
-          MINIBUS PATTERN LIVELY LINED NOTEBOOK<!--{{product name here}}-->
-        </div>
-         <div class="product-price">
-          $5.00<!--{{product price here, apply currency filter}}-->
-        </div>
-      </div>
-
-
+  </div>
             
         </div>
 </section>

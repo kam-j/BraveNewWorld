@@ -54,7 +54,7 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
 
   .state('admin.edit',{
     url:'/edit',
-    templateUrl:'site/partials/edit_product.html'
+    templateUrl:'site/partials/edit_product.html',
   })
  
 	$httpProvider.interceptors.push(function(){
