@@ -1,0 +1,36 @@
+<h3>
+EDIT PRODUCT</h3>
+
+<article class="product-frm">
+  <form  ng-submit="ctrl.updateProduct()">
+
+    <div>
+      <label>Name</label>
+      <input type="text" name="name" ng-model="ctrl.product.name" required ng-change="ctrl.enable=true">
+    </div>
+    <div>
+      <label>Image</label>
+      <input type="text" name="image" ng-model="ctrl.product.image" required ng-change="ctrl.enable=true">
+    </div>
+    <div>
+      <label>Description</label>
+      <textarea type="text" name="description" ng-model="ctrl.product.description" required ng-change="ctrl.enable=true"></textarea>
+    </div>
+    <div>
+      <label>Category</label>
+      <select ng-options="option.value as option.label for option in ctrl.productSrv.categories" ng-model="ctrl.product.category" name="category" ng-change="ctrl.enable=true">
+      </select>
+    </div>
+    <div>
+      <label>Price</label>
+      <input type="number" name="price" ng-model="ctrl.product.price" required ng-change="ctrl.enable=true">
+    </div>
+    <div>
+      <label>Quantity</label>
+      <input type="number" name="quantity" ng-model="ctrl.product.quantity" required ng-change="ctrl.enable=true">
+    </div>
+    <div>
+      <button ng-disabled="ctrl.enable==false" type="submit">Update</button>
+    </div>
+  </form>
+</article>

@@ -1,0 +1,10 @@
+<div class="row">
+   <div ng-repeat="product in ctrl.productSrv.products">
+       <div class="clearfix" ng-if="$index % 3 == 0"></div>
+       <div class="col-sm-4">
+           <h2>{{product.name}}</h2>
+           <img ng-src="assets/img/{{product.image}}">
+           <p>{{product.description}}</p>
+       </div>
+   </div>
+</div>

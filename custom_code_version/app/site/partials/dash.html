@@ -1,0 +1,23 @@
+
+<div>
+<table>
+	 <tr>
+      <th> Category </th>
+      <th> Name </th>
+      <th> Price </th>
+      <th> Quantity</th>
+      <th> &nbsp;</th>
+    </tr>
+
+	<tr ng-repeat="product in ctrl.products">
+		<td>{{product.category}}</td>
+		<td>{{product.name}}</td>
+		<td>{{product.price}}</td>
+		<td>{{product.quantity}}</td>
+		<td><a ng-click="ctrl.passProduct(product)">Edit/Update</a></td>
+		<td><button ng-click="ctrl.deleteProduct(product.id)" >Delete</button></td>
+	</tr>
+
+</table>
+
+</div>
