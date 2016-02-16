@@ -37,8 +37,8 @@
             var srv=this;
             this.api.request('/orders', order, 'POST')
             .then(function(){
-
-            })
+                return;
+            });
         }
 
         function deleteProduct(productId) {

@@ -9,6 +9,11 @@
                 <li ng-repeat="item in ctrl.cart">
                     {{ item.name }}
                 </li>
+                
+                <p>Subtotal:</p>
+                <p>Total:</p>
+                <button type="submit" ng-click="ctrl.deleteProduct()">Delete</button>
+                <button>Checkout</button>
             </ul>
         </div>
       
