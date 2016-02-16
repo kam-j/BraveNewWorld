@@ -36,10 +36,10 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
   .state('admin.orders',{
     url:'/orders',
     templateUrl:'site/partials/orders.html',
-    controller: 'productCtrl as ctrl',
+    controller: 'ordersCtrl as ctrl',
     resolve: {
       orders: function(productSrv){
-        return productSrv.getProducts();
+        return productSrv.getOrders();
       }
     }
     

@@ -47,6 +47,9 @@
             return this.api.request('/orders', {}, 'GET')
                 .then(function(response) {
                     srv.orders = response.data.orders;
+                    return response.data.orders;
+
+
                 });
         }
 
