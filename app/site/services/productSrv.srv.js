@@ -15,7 +15,8 @@
         this.updateProduct = updateProduct;
         this.deleteProduct=deleteProduct;
         this.addOrder=addOrder;
-
+        this.orders=[];
+        this.getOrders=getOrders;
 
 
 
@@ -39,6 +40,14 @@
             .then(function(){
                 return;
             });
+        }
+
+        function getOrders(){
+            var srv=this;
+            return this.api.request('/orders', {}, 'GET')
+                .then(function(response) {
+                    srv.orders = response.data.orders;
+                });
         }
 
         function deleteProduct(productId) {

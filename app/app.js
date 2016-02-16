@@ -33,6 +33,18 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
     
   })
 
+  .state('admin.orders',{
+    url:'/orders',
+    templateUrl:'site/partials/orders.html',
+    controller: 'productCtrl as ctrl',
+    resolve: {
+      orders: function(productSrv){
+        return productSrv.getProducts();
+      }
+    }
+    
+  })
+
   .state('admin.dash',{
     url:'/dash',
     templateUrl:'site/partials/dash.html',
