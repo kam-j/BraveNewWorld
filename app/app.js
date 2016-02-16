@@ -55,7 +55,11 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
     }
   })
 
-
+  .state('login',{
+    url:'/login',
+    templateUrl: 'site/partials/login-main.html',
+    controller: 'authCtrl as ctrl',
+  })
     
 
   .state('admin.add_product',{
