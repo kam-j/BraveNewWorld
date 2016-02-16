@@ -15,7 +15,7 @@
         ctrl.passProduct = passProduct;
         ctrl.enable = false;
         ctrl.product = {};
-
+        ctrl.categories = ctrl.productSrv.categories;
         $scope.$watch(function() {
             return ctrl.productSrv.products;
         }, function() {
@@ -37,7 +37,7 @@
                 name: ctrl.product.name,
                 image: ctrl.product.image,
                 description: ctrl.product.description,
-                category: ctrl.product.cateogry,
+                category: ctrl.product.category,
                 price: ctrl.product.price,
                 quantity: ctrl.product.quantity,
                 id: ctrl.product.id

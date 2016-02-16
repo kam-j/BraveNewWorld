@@ -58,13 +58,11 @@
 <!--//CATEGORY NAV//-->
 
  <hr>
-  <ul class="category-nav">
-    <li><a>ALL</a></li>
-    <li><a>PLANNERS</a></li>
-    <li><a>NOTEBOOKS</a></li>
-    <li><a>PENS</a></li>  
-    <li><a>PENCILS</a></li>
+
+  <ul class="category-nav" ng-repeat="cat in ctrl.categories">
+    <li ng-click="ctrl.catFilter=cat.value">{{cat.label}}</li> 
   </ul>
+
 <form class="navbar-form navbar-left" role="search">
     <input type="text" class="form-control" placeholder="Search for an item">
     <button type="submit" class="btn btn-default">?</button>
@@ -77,7 +75,7 @@
 <!--//PRODUCTS START//-->
 <section class="product-view">
   <div class="row">
-    <div ng-repeat="product in ctrl.productSrv.products">
+    <div ng-repeat="product in ctrl.productSrv.products|filter: ctrl.catFilter">
         <div class="clearfix" ng-if="$index % 3 == 0"></div>
           <div class="col-sm-4">
             <div class="product-img">

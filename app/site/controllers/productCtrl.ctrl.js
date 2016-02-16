@@ -16,6 +16,7 @@
         ctrl.$uibModal = $uibModal;
         ctrl.goLogin = goLogin;
         ctrl.state= $state;
+        ctrl.catFilter="";
 
         ctrl.cart = [];
         ctrl.animationsEnabled = true;
