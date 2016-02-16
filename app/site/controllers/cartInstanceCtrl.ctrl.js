@@ -11,7 +11,7 @@
         ctrl.$uibModalInstance=$uibModalInstance;
         ctrl.close=close;
         ctrl.checkOut=checkOut;
-
+        ctrl.cartTotal=cartTotal;
         // checkout
         function checkOut(){
 
