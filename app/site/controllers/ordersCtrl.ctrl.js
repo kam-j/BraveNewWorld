@@ -9,7 +9,7 @@
         	var ctrl=this;
         	ctrl.productSrv=productSrv;
             ctrl.orders=orders;
-
+        }
             
 
         

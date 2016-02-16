@@ -6,15 +6,28 @@
         </div>
         <div class="modal-body">
             <ul>
-                <li ng-repeat="item in ctrl.cart">
+                <li ng-repeat="item in ctrl.cart track by $index">
                     {{ item.name }}
                 </li>
                 
-                <p>Subtotal:</p>
+                <p>Subtotal: </p>
+
+                <p>Total: {{ctrl.cartTotal}}</p>
+                
+                <li> <a ng-click="ctrl.close()"> Close  <i class="fa fa-trash-o"></i></li></a>
+                <li> <a ng-click="ctrl.checkOut()"> Checkout <i class="fa fa-credit-card"></i></li></a>
+
                 <p>Total:</p>
                 <button type="submit" ng-click="ctrl.deleteProduct()">Delete</button>
-                <button>Checkout</button>
+                <button ng-click="ctrl.checkOut()">Checkout</button>
+
+                <p>Total:</p>
+                <button type="submit" ng-click="ctrl.deleteProduct()">Delete</button>
+                <button ng-click="ctrl.checkOut()">Checkout</button>
+
             </ul>
         </div>
       
 
+       
+       

@@ -11,16 +11,17 @@
         ctrl.$uibModalInstance=$uibModalInstance;
         ctrl.close=close;
         ctrl.checkOut=checkOut;
-
+        ctrl.cartTotal=cartTotal;
         // checkout
         function checkOut(){
 
             var cartObject={
                 cart: ctrl.cart,
                 total: cartTotal(ctrl.cart),
-                tax: cartObject.total*.13,
-                final_total: cartObject.total*1.13,
+                tax: (cartTotal(ctrl.cart)*.13).toFixed(2),
+                final_total: (cartTotal(ctrl.cart)*1.13).toFixed(2),
             }
+            console.log(cartObject);
             ctrl.productSrv.addOrder(cartObject);
             ctrl.$uibModalInstance.close();
         }
