@@ -58,6 +58,7 @@
             var srv = this;
             return this.api.request('/products', {}, 'GET')
                 .then(function(response) {
+                    console.log(response.data);
                     srv.products = response.data.products;
                     return response.data.products;
                 });

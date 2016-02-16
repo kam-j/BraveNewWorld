@@ -47,5 +47,6 @@
             ctrl.productSrv.updateProduct(product);
         }
 
-    }
+    }   
+        
 })();
