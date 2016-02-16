@@ -1,0 +1,24 @@
+<!--//PRODUCTS START//-->
+<section class="product-view">
+  <div class="row">
+    <button ng-click="Details">
+        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+          <div class="col-sm-4">
+            <div class="product-img">
+              <img ng-src="assets/img/{{product.image}}">
+            </div>
+            <div class="product-name">
+              {{ctrl.product.name | uppercase}}
+            </div>
+            <div class="product-price">
+              {{ctrl.product.price | currency}}
+            </div>
+            <div class="product-price">
+              {ctrl.product.description}}
+            </div>
+             <div class="product-price">
+              {ctrl.product.category}}
+            </div>
+          </div>
+      </div>
+  </div>

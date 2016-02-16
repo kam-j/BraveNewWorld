@@ -72,6 +72,17 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
     url:'/edit',
     templateUrl:'site/partials/edit_product.html',
   })
+
+  .state('admin.productdetails',{
+    url:'/details',
+    templateUrl:'site/partials/admin-productdetails.html',
+    controller: 'detailsCtrl as ctrl'
+    resolve: {
+      products: function(productSrv){
+        return productSrv.getProducts();
+      }
+    }
+  })
  
 	$httpProvider.interceptors.push(function(){
        return {
