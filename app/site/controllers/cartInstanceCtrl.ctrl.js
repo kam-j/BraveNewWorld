@@ -12,6 +12,7 @@
         ctrl.close=close;
         ctrl.checkOut=checkOut;
 
+        // checkout
         function checkOut(){
 
             var cartObject={
@@ -36,7 +37,7 @@
         	ctrl.$uibModalInstance.dismiss();
         }
 
-
+ 
        
 
     }
