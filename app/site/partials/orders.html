@@ -1,0 +1,25 @@
+<div>
+<table>
+	 <tr>
+      <th> ORDERS </th>
+
+      <th> &nbsp;</th>
+    </tr>
+
+	<tr ng-repeat="order in ctrl.orders">
+		<td>{{order.orderId}}</td>
+		
+		<td><tr ng-repeat="item in order.cart">
+				<td>item: {{item.name}}</td>
+				<td>quantity: {{item.quantity}}
+			</tr>
+		</td>
+
+		<td>TOTAL: {{order.final_total}}</td>
+
+		
+	</tr>
+
+</table>
+
+</div>
