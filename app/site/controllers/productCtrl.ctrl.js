@@ -22,7 +22,7 @@
 
         ctrl.open = open;
 
-                ctrl.deleteProduct = deleteProduct;
+        ctrl.deleteProduct = deleteProduct;
 
 
 
