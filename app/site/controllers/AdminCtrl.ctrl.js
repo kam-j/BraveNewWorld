@@ -15,7 +15,10 @@
         ctrl.passProduct = passProduct;
         ctrl.enable = false;
         ctrl.product = {};
+
         ctrl.categories = ctrl.productSrv.categories;
+
+        ctrl.deleteProduct = deleteProduct;
         $scope.$watch(function() {
             return ctrl.productSrv.products;
         }, function() {
@@ -24,6 +27,9 @@
 
         });
 
+        function deleteProduct(id) {
+            ctrl.productSrv.deleteProduct(id);
+        }
 
 
         function passProduct(product) {
