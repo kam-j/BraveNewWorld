@@ -1,11 +1,10 @@
 <!--//PRODUCTS START//-->
 <section class="product-view">
   <div class="row">
-    <button ng-click="Details">
-        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="clearfix"></div>
           <div class="col-sm-4">
             <div class="product-img">
-              <img ng-src="assets/img/{{product.image}}">
+              <img ng-src="assets/img/{{ctrl.product.image}}">
             </div>
             <div class="product-name">
               {{ctrl.product.name | uppercase}}
@@ -19,6 +18,9 @@
              <div class="product-price">
               {ctrl.product.category}}
             </div>
+        <div class=buttons>
+      <a class="btn btn-primary" ng-click="">Details</a>
+    </div>
           </div>
       </div>
   </div>

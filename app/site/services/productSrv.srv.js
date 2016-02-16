@@ -87,6 +87,12 @@
                 });
         }
 
+        function getProduct(productId) {
+            var srv = this; 
+            return this.api.request('/products'/+productId,{} 'GET');
+
+        }
+
         
 
         function updateProduct(product) {
