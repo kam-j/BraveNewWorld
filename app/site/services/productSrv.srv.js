@@ -58,6 +58,7 @@
             return this.api.request('/orders', {}, 'GET')
                 .then(function(response) {
                     srv.orders = response.data.orders;
+                    console.log('orders: ',srv.orders);
                     return response.data.orders;
 
 

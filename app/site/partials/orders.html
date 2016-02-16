@@ -7,12 +7,15 @@
     </tr>
 
 	<tr ng-repeat="order in ctrl.orders">
-		<td>{{order.orderId}}</td>
+		<td>{{order.id}}</td>
 		
-		<td><tr ng-repeat="item in order.cart">
+		<td>
+			<table>
+			<tr ng-repeat="item in order.cart track by $index">
 				<td>item: {{item.name}}</td>
 				<td>quantity: {{item.quantity}}
 			</tr>
+		</table>
 		</td>
 
 		<td>TOTAL: {{order.final_total}}</td>
