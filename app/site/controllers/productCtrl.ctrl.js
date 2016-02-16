@@ -28,6 +28,7 @@
 
         function addToCart(product){
             ctrl.cart.push(product);
+            console.log(ctrl.cart);
         }
 
 
