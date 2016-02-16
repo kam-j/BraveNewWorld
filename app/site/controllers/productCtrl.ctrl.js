@@ -5,8 +5,8 @@
         .controller('productCtrl', ProductCtrl);
 
 
-    function ProductCtrl(api, productSrv, $stateParams, $uibModal,products) {
-       
+    function ProductCtrl(api, productSrv, $stateParams, $uibModal, products) {
+
         var ctrl = this;
         ctrl.api = api;
         ctrl.productSrv = productSrv;
@@ -22,7 +22,7 @@
 
         ctrl.open = open;
 
-                ctrl.deleteProduct = deleteProduct;
+        ctrl.deleteProduct = deleteProduct;
 
 
 
@@ -40,22 +40,34 @@
 
             ctrl.productSrv.addProduct(product);
         }
+
         function deleteProduct(id) {
             ctrl.productSrv.deleteProduct(id);
         }
 
-        function open() {   
+        function open() {
             console.log('modal');
             var modalInstance = $uibModal.open({
                 animation: ctrl.animationsEnabled,
                 templateUrl: 'site/partials/cart.html',
                 controller: 'cartInstanceCtrl as ctrl',
                 size: 'sm',
+                resolve: {
+                    cart: function() {
+                        return ctrl.cart;
+                    }
+                }
 
 
             });
 
+            modalInstance.result.then(function() {
+                ctrl.cart = [];
+
+            });
         };
+
+
 
         function state() {
             console.log('Hi');

@@ -20,28 +20,25 @@
 
 
         this.categories = [{
-            label: 'Shirts',
-            value: 'shirts'
+            label: 'Pens',
+            value: 'pens'
         }, {
-            label: 'Pants',
-            value: 'pants'
+            label: 'Pencils',
+            value: 'pencils'
         }, {
-            label: 'Shoes',
-            value: 'shoes'
+            label: 'Planners',
+            value: 'Planners'
         }, {
-            label: 'Outerwear',
-            value: 'outerwear'
-        }, {
-            label: 'Accessories',
-            value: 'accessories'
-        }, ];
+            label: 'Notebooks',
+            value: 'notebooks'
+        },];
 
         function addOrder(order){
             var srv=this;
             this.api.request('/orders', order, 'POST')
             .then(function(){
-
-            })
+                return;
+            });
         }
 
         function deleteProduct(productId) {
