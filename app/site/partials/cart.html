@@ -10,11 +10,15 @@
                     {{ item.name }}
                 </li>
                 
-                <p>Subtotal:</p>
-                <p>Total:</p>
-                <button type="submit" ng-click="ctrl.deleteProduct()">Delete</button>
-                <button>Checkout</button>
+                <p>Subtotal: </p>
+                <p>Total: {{ctrl.cartTotal}}</p>
+                
+                <li> <a ng-click="ctrl.close()"> Close  <i class="fa fa-trash-o"></i></li></a>
+                <li> <a ng-click="ctrl.checkOut()"> Checkout <i class="fa fa-credit-card"></i></li></a>
+
             </ul>
         </div>
       
 
+       
+       
