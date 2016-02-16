@@ -23,10 +23,11 @@
 
         ctrl.open = open;
 
-        ctrl.deleteProduct = deleteProduct;
         ctrl.addToCart=addToCart;
 
         function addToCart(product){
+            
+
             ctrl.cart.push(product);
             console.log(ctrl.cart);
         }
@@ -46,10 +47,7 @@
             ctrl.productSrv.addProduct(product);
         }
 
-        function deleteProduct(id) {
-            ctrl.productSrv.deleteProduct(id);
-        }
-
+        
         function open() {
             console.log('modal');
             var modalInstance = $uibModal.open({
