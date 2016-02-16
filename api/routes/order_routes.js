@@ -5,6 +5,11 @@ var router = express.Router();
 //get all orders
 router.get('/',function(req,res){
 	models.Orders.findAll().then(function(orders){
+		
+		for(var index in orders){
+			orders[index].cart = JSON.parse(orders[index].cart);
+		}
+
 		res.json({
 			orders:orders
 		});

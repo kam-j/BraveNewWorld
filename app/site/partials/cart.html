@@ -9,14 +9,11 @@
                 <li ng-repeat="item in ctrl.cart track by $index">
                     {{ item.name }}
                 </li>
-                
                 <p>Subtotal: {{ctrl.cartTotal(ctrl.cart) | currency: USD$ }} </p>
 
                 <p>Total: {{ctrl.cartTotal(ctrl.cart)*1.13 | currency: USD$ }}</p>
                 
                 <li><a ng-click="ctrl.checkOut()"> Checkout <i class="fa fa-credit-card"></i></li></a>
-
-
             </ul>
         </div>
       
