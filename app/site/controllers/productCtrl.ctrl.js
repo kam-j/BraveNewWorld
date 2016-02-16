@@ -5,7 +5,7 @@
         .controller('productCtrl', ProductCtrl);
 
 
-    function ProductCtrl(api, productSrv, $stateParams, $uibModal, products) {
+    function ProductCtrl(api, productSrv, $stateParams, $uibModal, products,$state) {
 
         var ctrl = this;
         ctrl.api = api;
@@ -14,7 +14,8 @@
         ctrl.categories = ctrl.productSrv.categories;
         ctrl.products = products;
         ctrl.$uibModal = $uibModal;
-        ctrl.state = state;
+        ctrl.goLogin = goLogin;
+        ctrl.state= $state;
 
         ctrl.cart = [];
         ctrl.animationsEnabled = true;
@@ -69,8 +70,12 @@
 
 
 
-        function state() {
+        function goLogin() {
             console.log('Hi');
+            var ctrl=this;
+            ctrl.state.go('login');
+            
+          
         };
 
 

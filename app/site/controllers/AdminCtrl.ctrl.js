@@ -16,7 +16,6 @@
         ctrl.enable = false;
         ctrl.product = {};
 
-
         $scope.$watch(function() {
             return ctrl.productSrv.products;
         }, function() {
