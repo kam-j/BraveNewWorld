@@ -46,27 +46,14 @@ h2 {
 /*ADMIN BEGINS*/
 
 
-/*
-.head1 {
-background-color: black;
-position: fixed;
-width: 100%;
-height: 56px;
-
-}
-
-.head1 h3 {
-  text-align: right;
-  font-family: 'Lobster', cursive; 
-}*/
 
 .nav-panel{
-  position: fixed;
+  position: absolute;
   float: left;
   background-color: white;
   width: 20%;
-  height: 100%;
-  /*top: 56px;*/
+  height: 1000px;
+  
   
 }
 .nav-panel img {
@@ -95,7 +82,7 @@ height: 56px;
 }
 
 .main-content {
-  position: fixed;
+  position: absolute;
   top: 15%;
   left: 32%;
 }
@@ -114,11 +101,21 @@ height: 56px;
 }
 .product-frm label {
   display: block;
+
 }
 
 
 /*ADD PRODUCT ENDS*/
 
+.view2 {
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
 
+}
+.view2 td {
+  padding: 20px;
+  text-align: center;
+}
 
 
