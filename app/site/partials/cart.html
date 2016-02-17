@@ -5,7 +5,8 @@
        <div class="modal-body">
            <ul>
                <li ng-repeat="item in ctrl.cart track by $index">
-                   {{ item.name }}
+               <span>
+                    <p>{{ item.name }}</p> <p>item.quantity</p></span>
                </li>
                
                <p>Subtotal: {{ctrl.cartTotal(ctrl.cart) | currency: USD$ }} </p>

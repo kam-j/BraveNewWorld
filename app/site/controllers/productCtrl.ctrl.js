@@ -26,10 +26,25 @@
         ctrl.addToCart=addToCart;
 
         function addToCart(product){
-            
+            var prod={
+                name: product.name,
+                id: product.id,
+                price: product.price,
+                quantity:1
+            }
 
-            ctrl.cart.push(product);
-            console.log(ctrl.cart);
+            for(var item in ctrl.cart){
+                if(prod.name==item.name){
+                    item.quantity++;
+                    console.log(item);
+                }
+                else {
+                ctrl.cart.push(prod);
+                console.log(prod);
+                }
+
+            };
+
         }
 
 
