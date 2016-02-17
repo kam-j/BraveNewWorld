@@ -1,8 +1,8 @@
-(function() {
-    'use strict'
-    angular
-        .module('shopApp')
-        .controller('productCtrl', ProductCtrl);
+function() {
+   'use strict'
+   angular
+       .module('shopApp')
+       .controller('productCtrl', ProductCtrl);
 
 
     function ProductCtrl(api, productSrv, $stateParams, $uibModal, products, $state) {
@@ -25,8 +25,9 @@
         ctrl.animationsEnabled = true;
 
 
+        ctrl.cart = [];
+        ctrl.animationsEnabled = true;
         ctrl.open = open;
-
         ctrl.addToCart = addToCart;
 
         function addToCart(product) {
@@ -63,44 +64,73 @@
             console.log(product);
         }
 
+       function addToCart(product) {
 
-        function addProduct() {
-            var product = {
-                name: ctrl.name,
-                image: ctrl.image,
-                description: ctrl.description,
-                category: ctrl.category,
-                price: ctrl.price,
-                quantity: ctrl.quantity,
-                status: ctrl.status
-            }
+           console.log('working');
+           var prod = {
+               name: product.name,
+               id: product.id,
+               price: product.price,
+               quantity: 1
+           }
+           if (ctrl.cart.length > 0) {
+               var exists=false;
+               for (var item in ctrl.cart) {
+                   if (ctrl.cart[item].name==prod.name) {
+                       ctrl.cart[item].quantity++;
+                       exists=true;
+                   }
 
-            ctrl.productSrv.addProduct(product);
-        }
+               }
+               if(!exists){ ctrl.cart.push(prod);}
+           }
+           else {
+                       ctrl.cart.push(prod);
+                       console.log('new prod added', prod);
+                   }
+
+       function open() {
+           console.log('modal');
+           var modalInstance = $uibModal.open({
+               animation: ctrl.animationsEnabled,
+               templateUrl: 'site/partials/cart.html',
+               controller: 'cartInstanceCtrl as ctrl',
+               size: 'sm',
+               resolve: {
+                   cart: function() {
+                       return ctrl.cart;
+                   }
+               }
 
 
-        function open() {
-            console.log('modal');
-            var modalInstance = $uibModal.open({
-                animation: ctrl.animationsEnabled,
-                templateUrl: 'site/partials/cart.html',
-                controller: 'cartInstanceCtrl as ctrl',
-                size: 'sm',
-                resolve: {
-                    cart: function() {
-                        return ctrl.cart;
-                    }
-                }
+           });
+
+           modalInstance.result.then(function() {
+               ctrl.cart = [];
+
+           });
+       };
+
+       function goToDetails(product){
+            var ctrl=this;
+           ctrl.state.go('productdetails',{productId:product.id});
+           console.log(product);
+       }
 
 
-            });
+       function addProduct() {
+           var product = {
+               name: ctrl.name,
+               image: ctrl.image,
+               description: ctrl.description,
+               category: ctrl.category,
+               price: ctrl.price,
+               quantity: ctrl.quantity,
+               status: ctrl.status
+           }
 
-            modalInstance.result.then(function() {
-                ctrl.cart = [];
-
-            });
-        };
-
+           ctrl.productSrv.addProduct(product);
+       }
 
 
         function goLogin() {
@@ -112,12 +142,12 @@
         };
 
 
-        ctrl.toggleAnimation = function() {
-            ctrl.animationsEnabled = !ctrl.animationsEnabled;
-        };
+       ctrl.toggleAnimation = function() {
+           ctrl.animationsEnabled = !ctrl.animationsEnabled;
+       };
 
 
 
-    }
+   }
 
 })();
