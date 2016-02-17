@@ -1,10 +1,13 @@
-<div>
+<div class="orders1">
 <table>
      <tr>
-     <th> ORDERS </th>
+     <th> ORDERS:</th>
+
 
      <th> &nbsp;</th>
+
    </tr>
+ 
 
     <tr ng-repeat="order in ctrl.orders">
         <td>{{order.id}}</td>
@@ -13,16 +16,17 @@
             <table>
             <tr ng-repeat="item in order.cart track by $index">
                 <td> {{item.name}}</td>
-                <td>quantity: {{item.quantity}}
+                <td><strong>  Quantity: </strong> {{item.quantity}}
             </tr>
         </table>
         </td>
 
-        <td>TOTAL: {{order.final_total}}</td>
+        <td><strong>TOTAL: </strong> {{order.final_total}}</td>
 
         <td> <a ng-click="ctrl.clearOrder()">Fulfill/Clear Order</a> </td>
-    </tr>
 
+    </tr>
+    
 </table>
 
 </div>
