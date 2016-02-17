@@ -15,13 +15,11 @@
         ctrl.products = products;
         ctrl.$uibModal = $uibModal;
         ctrl.goLogin = goLogin;
-<<<<<<< HEAD
         ctrl.goToDetails = goToDetails;
         ctrl.state = $state;
-=======
-        ctrl.state= $state;
+
         ctrl.catFilter="";
->>>>>>> dclancy13/master
+
 
         ctrl.cart = [];
         ctrl.animationsEnabled = true;
