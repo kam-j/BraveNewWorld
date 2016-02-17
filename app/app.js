@@ -20,6 +20,18 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
     
   })
 
+  .state('productDetails', {
+    url:'/:productId',
+    templateUrl: 'site/partials/admin-productdetails.html',
+    controller: 'detailsCtrl as ctrl',
+    resolve: {
+      product: function(productSrv,$stateParams){
+        console.log($stateParams.productId);
+        return productSrv.getProduct($stateParams.productId);
+      }
+    }
+  })
+
 
   .state('admin',{
     url:'/admin',
@@ -73,7 +85,7 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
     templateUrl:'site/partials/edit_product.html',
   })
 
-  .state('productdetails',{
+  .state('admin.productdetails',{
     url:'/details/:productId',
     templateUrl:'site/partials/admin-productdetails.html',
     controller: 'detailsCtrl as ctrl',

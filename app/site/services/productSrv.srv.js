@@ -11,6 +11,7 @@
         this.api = api;
         this.products = [];
         this.getProducts = getProducts;
+        this.getProduct = getProduct;
         this.addProduct = addProduct;
         this.updateProduct = updateProduct;
         this.deleteProduct=deleteProduct;

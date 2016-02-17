@@ -61,7 +61,7 @@
 
       function goToDetails(product){
            var ctrl=this;
-          ctrl.state.go('productdetails',{productId:product.id});
+          ctrl.state.go('productDetails',{productId:product.id});
           console.log(product);
       }
 
