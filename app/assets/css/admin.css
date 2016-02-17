@@ -119,3 +119,17 @@ h2 {
 }
 
 
+/*ORDERS*/
+.orders1 th {
+  font-size: 20px
+
+}
+
+.orders1 td {
+  padding: 20px;
+}
+
+.ordersBox {
+  background-color: white;
+  opacity: .9;
+}
