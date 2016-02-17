@@ -1,27 +1,27 @@
 <div>
 <table>
-	 <tr>
-      <th> ORDERS </th>
+     <tr>
+     <th> ORDERS </th>
 
-      <th> &nbsp;</th>
+     <th> &nbsp;</th>
+   </tr>
+
+    <tr ng-repeat="order in ctrl.orders">
+        <td>{{order.id}}</td>
+        
+        <td>
+            <table>
+            <tr ng-repeat="item in order.cart track by $index">
+                <td> {{item.name}}</td>
+                <td>quantity: {{item.quantity}}
+            </tr>
+        </table>
+        </td>
+
+        <td>TOTAL: {{order.final_total}}</td>
+
+        <td> <a ng-click="ctrl.clearOrder()">Fulfill/Clear Order</a> </td>
     </tr>
-
-	<tr ng-repeat="order in ctrl.orders">
-		<td>{{order.id}}</td>
-		
-		<td>
-			<table>
-			<tr ng-repeat="item in order.cart track by $index">
-				<td> {{item.name}}</td>
-				<td>quantity: {{item.quantity}}
-			</tr>
-		</table>
-		</td>
-
-		<td>TOTAL: {{order.final_total}}</td>
-
-		
-	</tr>
 
 </table>
 

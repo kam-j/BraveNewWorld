@@ -65,7 +65,7 @@ height: 56px;
   float: left;
   background-color: white;
   width: 20%;
-  height: 100%;
+  height: 2000px;
   /*top: 56px;*/
   
 }
@@ -114,11 +114,21 @@ height: 56px;
 }
 .product-frm label {
   display: block;
+
 }
 
 
 /*ADD PRODUCT ENDS*/
 
+.view2 {
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
 
+}
+.view2 td {
+  padding: 20px;
+  text-align: center;
+}
 
 
