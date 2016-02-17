@@ -87,10 +87,24 @@
             var srv = this;
             return this.api.request('/products', {}, 'GET')
                 .then(function(response) {
+                    console.log(response.data);
                     console.log(response.data.products);
                     srv.products = response.data.products;
                     return response.data.products;
                 });
+        }
+
+        function getProduct(productId) {
+            var srv = this; 
+            console.log("hi2");
+            return this.api.request('/products/'+productId, {}, 'GET')
+            .then(function(response) {
+                    console.log(response.data);
+                    return response.data.product;
+                },function(error){
+                    console.log(error);
+                });
+
         }
 
         

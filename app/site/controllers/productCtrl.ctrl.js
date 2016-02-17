@@ -15,8 +15,11 @@
         ctrl.products = products;
         ctrl.$uibModal = $uibModal;
         ctrl.goLogin = goLogin;
+        ctrl.goToDetails = goToDetails;
         ctrl.state = $state;
-        ctrl.catFilter = "";
+
+        ctrl.catFilter="";
+
 
         ctrl.cart = [];
         ctrl.animationsEnabled = true;
@@ -52,6 +55,12 @@
                         console.log('new prod added', prod);
                     }
 
+        }
+
+        function goToDetails(product){
+             var ctrl=this;
+            ctrl.state.go('productdetails',{productId:product.id});
+            console.log(product);
         }
 
 
