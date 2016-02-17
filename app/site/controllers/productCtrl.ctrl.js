@@ -36,17 +36,17 @@
                 quantity: 1
             }
             if (ctrl.cart.length > 0) {
+                var exists=false;
                 for (var item in ctrl.cart) {
-                    if (prod.name == ctrl.cart[item].name) {
+                    if (ctrl.cart[item].name==prod.name) {
                         ctrl.cart[item].quantity++;
-                        console.log(ctrl.cart[item].quantity);
-                    } else {
-                        ctrl.cart.push(prod);
-                        console.log('new prod added', prod);
-                    }
+                        exists=true;
+                    } 
 
                 }
+                if(!exists){ ctrl.cart.push(prod);}
             }
+
             else {
                         ctrl.cart.push(prod);
                         console.log('new prod added', prod);
