@@ -15,7 +15,8 @@
         ctrl.products = products;
         ctrl.$uibModal = $uibModal;
         ctrl.goLogin = goLogin;
-        ctrl.state= $state;
+        ctrl.goToDetails = goToDetails;
+        ctrl.state = $state;
 
         ctrl.cart = [];
         ctrl.animationsEnabled = true;
@@ -29,6 +30,12 @@
         function addToCart(product){
             ctrl.cart.push(product);
             console.log(ctrl.cart);
+        }
+
+        function goToDetails(product){
+             var ctrl=this;
+            ctrl.state.go('productdetails',{productId:product.id});
+            console.log(product);
         }
 
 

@@ -73,14 +73,15 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
     templateUrl:'site/partials/edit_product.html',
   })
 
-  .state('admin.productdetails',{
+  .state('productdetails',{
     url:'/details/:productId',
     templateUrl:'site/partials/admin-productdetails.html',
     controller: 'detailsCtrl as ctrl',
     resolve: {
-      products: function(productSrv,$stateParams){
+      product: function(productSrv,$stateParams){
+        console.log("yo");
+        console.log($stateParams.productId);
         return productSrv.getProduct($stateParams.productId);
-        return productSrv.getProduct();
       }
     }
   })

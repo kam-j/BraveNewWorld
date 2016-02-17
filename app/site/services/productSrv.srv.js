@@ -90,7 +90,14 @@
 
         function getProduct(productId) {
             var srv = this; 
-            return this.api.request('/products'/+productId, {}, 'GET')
+            console.log("hi2");
+            return this.api.request('/products/'+productId, {}, 'GET')
+            .then(function(response) {
+                    console.log(response.data);
+                    return response.data.product;
+                },function(error){
+                    console.log(error);
+                });
 
         }
 

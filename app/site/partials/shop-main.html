@@ -81,7 +81,7 @@
         <div class="clearfix" ng-if="$index % 3 == 0"></div>
           <div class="col-sm-4">
             <div class="product-img">
-              <img src="assets/img/{{product.image}}">
+              <img ng-click="ctrl.goToDetails(product)" src="assets/img/{{product.image}}">
             </div>
             <div class="product-name">
               {{product.name | uppercase}}
