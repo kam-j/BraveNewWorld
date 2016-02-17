@@ -5,7 +5,7 @@
             .controller('detailsCtrl', DetailsCtrl);
 
 
-        function DetailsCtrl(productSrv,product, $state, api) {
+        function DetailsCtrl(productSrv, product, $state, api) {
         	var ctrl= this;
         	ctrl.productSrv= productSrv;
             ctrl.product= product;
@@ -18,5 +18,5 @@
 
 
 
-        
+
     })();
