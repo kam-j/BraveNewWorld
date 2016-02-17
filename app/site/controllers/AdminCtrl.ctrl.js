@@ -15,6 +15,7 @@
         ctrl.passProduct = passProduct;
         ctrl.enable = false;
         ctrl.product = {};
+        ctrl.logout=logout;
 
         ctrl.categories = ctrl.productSrv.categories;
 
@@ -50,6 +51,11 @@
             }
 
             ctrl.productSrv.updateProduct(product);
+        }
+
+        function logout() {
+            console.log('hi');
+            ctrl.$state.go('home');
         }
 
     }   
