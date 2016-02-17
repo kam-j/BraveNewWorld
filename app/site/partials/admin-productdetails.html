@@ -1,0 +1,29 @@
+<!--//PRODUCTS START//-->
+<section class="product-view">
+  <div class="row">
+        <div class="clearfix"></div>
+          <div class="col-sm-4">
+            <div class="product-img">
+              <img ng-src="assets/img/{{ctrl.product.image}}">
+            </div>
+            <div class="product-name">
+              {{ctrl.product.name | uppercase}}
+            </div>
+            <div class="product-price">
+              {{ctrl.product.price | currency}}
+            </div>
+            <div class="product-description">
+              {ctrl.product.description}}
+            </div>
+             <div class="product-category">
+              {ctrl.product.category}}
+            </div>
+            <div class="product-quantity">
+              {ctrl.product.quantity}}
+            </div>
+        <div>
+     <!--  <button type="submit" ng-click="ctrl.getProduct()">{{}}</button> -->
+    </div>
+          </div>
+      </div>
+  </div>

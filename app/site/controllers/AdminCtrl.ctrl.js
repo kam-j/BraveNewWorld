@@ -52,5 +52,6 @@
             ctrl.productSrv.updateProduct(product);
         }
 
-    }
+    }   
+        
 })();
