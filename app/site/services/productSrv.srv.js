@@ -20,7 +20,12 @@
 
 
 
-        this.categories = [{
+        this.categories = [
+        {
+            label: 'All',
+            value: ''
+        }, 
+            {
             label: 'Pens',
             value: 'pens'
         }, {
@@ -82,7 +87,11 @@
             var srv = this;
             return this.api.request('/products', {}, 'GET')
                 .then(function(response) {
+<<<<<<< HEAD
                     console.log(response.data);
+=======
+                    console.log(response.data.products);
+>>>>>>> dclancy13/master
                     srv.products = response.data.products;
                     return response.data.products;
                 });

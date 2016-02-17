@@ -70,10 +70,11 @@ height: 56px;
   
 }
 .nav-panel img {
-  width: 200px;
+  width: 150px;
   position: relative;
+
   top: 10px;
-  left: 30px;
+  left: 20%;
 }
 
 .nav-panel h3, ul {

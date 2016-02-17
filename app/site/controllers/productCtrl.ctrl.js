@@ -15,8 +15,13 @@
         ctrl.products = products;
         ctrl.$uibModal = $uibModal;
         ctrl.goLogin = goLogin;
+<<<<<<< HEAD
         ctrl.goToDetails = goToDetails;
         ctrl.state = $state;
+=======
+        ctrl.state= $state;
+        ctrl.catFilter="";
+>>>>>>> dclancy13/master
 
         ctrl.cart = [];
         ctrl.animationsEnabled = true;
@@ -24,10 +29,11 @@
 
         ctrl.open = open;
 
-        ctrl.deleteProduct = deleteProduct;
         ctrl.addToCart=addToCart;
 
         function addToCart(product){
+            
+
             ctrl.cart.push(product);
             console.log(ctrl.cart);
         }
@@ -53,10 +59,7 @@
             ctrl.productSrv.addProduct(product);
         }
 
-        function deleteProduct(id) {
-            ctrl.productSrv.deleteProduct(id);
-        }
-
+        
         function open() {
             console.log('modal');
             var modalInstance = $uibModal.open({
