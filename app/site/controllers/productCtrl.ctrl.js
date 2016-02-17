@@ -5,7 +5,7 @@
         .controller('productCtrl', ProductCtrl);
 
 
-    function ProductCtrl(api, productSrv, $stateParams, $uibModal, products,$state) {
+    function ProductCtrl(api, productSrv, $stateParams, $uibModal, products, $state) {
 
         var ctrl = this;
         ctrl.api = api;
@@ -15,7 +15,8 @@
         ctrl.products = products;
         ctrl.$uibModal = $uibModal;
         ctrl.goLogin = goLogin;
-        ctrl.state= $state;
+        ctrl.state = $state;
+        ctrl.catFilter = "";
 
         ctrl.cart = [];
         ctrl.animationsEnabled = true;
@@ -23,12 +24,34 @@
 
         ctrl.open = open;
 
-        ctrl.deleteProduct = deleteProduct;
-        ctrl.addToCart=addToCart;
+        ctrl.addToCart = addToCart;
 
-        function addToCart(product){
-            ctrl.cart.push(product);
-            console.log(ctrl.cart);
+        function addToCart(product) {
+
+            console.log('working');
+            var prod = {
+                name: product.name,
+                id: product.id,
+                price: product.price,
+                quantity: 1
+            }
+            if (ctrl.cart.length > 0) {
+                var exists=false;
+                for (var item in ctrl.cart) {
+                    if (ctrl.cart[item].name==prod.name) {
+                        ctrl.cart[item].quantity++;
+                        exists=true;
+                    } 
+
+                }
+                if(!exists){ ctrl.cart.push(prod);}
+            }
+
+            else {
+                        ctrl.cart.push(prod);
+                        console.log('new prod added', prod);
+                    }
+
         }
 
 
@@ -46,9 +69,6 @@
             ctrl.productSrv.addProduct(product);
         }
 
-        function deleteProduct(id) {
-            ctrl.productSrv.deleteProduct(id);
-        }
 
         function open() {
             console.log('modal');
@@ -76,10 +96,10 @@
 
         function goLogin() {
             console.log('Hi');
-            var ctrl=this;
+            var ctrl = this;
             ctrl.state.go('login');
-            
-          
+
+
         };
 
 

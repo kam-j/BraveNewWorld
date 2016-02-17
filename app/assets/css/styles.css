@@ -58,20 +58,24 @@ html{
     margin-top: 50px;
 }
 
+/*CART*/
+.buttonx {
+  float: right;
+}
 
 
 /*CATEGORY NAV*/
-.category-nav li{
+.category-nav {
   width: 19%;
   display: inline-block;
   text-align: center;
   font-size: 14px;
 
 }
-.category-nav li a{
+.category-nav {
   color: darkgrey;
 }
-.category-nav li a:hover{
+.category-nav li :hover{
     text-decoration: none;
     color: lightgrey;
 }
