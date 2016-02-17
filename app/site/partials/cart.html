@@ -9,7 +9,12 @@
        <div class="modal-body">
            <ul>
                <li ng-repeat="item in ctrl.cart track by $index">
+<<<<<<< HEAD
+               <span>
+                    <p>{{ item.name }} {{item.quantity}}</p></span>
+=======
                  <strong>Products:</strong>  {{ item.name }}
+>>>>>>> c4e4f9fb4871c548b5186476e2fd66ead025e147
                </li>
                
                <p><strong>Subtotal:</strong> {{ctrl.cartTotal(ctrl.cart) | currency: USD$ }} </p>

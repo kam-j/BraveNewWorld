@@ -17,6 +17,7 @@
         this.addOrder=addOrder;
         this.orders=[];
         this.getOrders=getOrders;
+        this.deleteOrder=deleteOrder;
 
 
 
@@ -81,16 +82,66 @@
 
         }
 
+        (function() {
+       'use strict'
+       angular
+           .module('shopApp')
+           .controller('ordersCtrl', OrdersCtrl);
+
+
+       function OrdersCtrl(productSrv,orders, $scope) {
+           var ctrl=this;
+           ctrl.productSrv=productSrv;
+           ctrl.orders=orders;
+           ctrl.clearOrder=clearOrder;
+
+
+          $scope.$watch(function() {
+           return ctrl.productSrv.orders;
+       }, function() {
+
+           ctrl.orders = ctrl.productSrv.orders;
+
+       });
+
+
+
+           function clearOrder(id)
+           {
+               console.log('clear reached');
+               ctrl.productSrv.deleteOrder(id);
+           }
+       }
+           
+
+       
+
+})();
+
 
 
         function getProducts() {
             var srv = this;
             return this.api.request('/products', {}, 'GET')
                 .then(function(response) {
+                    console.log(response.data);
                     console.log(response.data.products);
                     srv.products = response.data.products;
                     return response.data.products;
                 });
+        }
+
+        function getProduct(productId) {
+            var srv = this; 
+            console.log("hi2");
+            return this.api.request('/products/'+productId, {}, 'GET')
+            .then(function(response) {
+                    console.log(response.data);
+                    return response.data.product;
+                },function(error){
+                    console.log(error);
+                });
+
         }
 
         

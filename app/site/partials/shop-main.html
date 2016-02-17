@@ -75,11 +75,11 @@
 <!--//PRODUCTS START//-->
 <section class="product-view">
   <div class="row">
-    <div ng-repeat="product in ctrl.productSrv.products|filter: ctrl.catFilter">
+    <div ng-repeat="product in ctrl.products|filter: ctrl.catFilter">
         <div class="clearfix" ng-if="$index % 3 == 0"></div>
           <div class="col-sm-4">
             <div class="product-img">
-              <img src="assets/img/{{product.image}}">
+              <img ng-click="ctrl.goToDetails(product)" src="assets/img/{{product.image}}">
             </div>
             <div class="product-name">
               {{product.name | uppercase}}
@@ -89,10 +89,18 @@
                <a class="pull-right" ng-click="ctrl.addToCart(product)"> Add to Cart <i class="fa fa-shopping-cart"></i></a>
             </div>
           </div>
-        </div>
+      </div>
   </div>
-            
-        </div>
+<!-- <div ng-repeat="product in ctrl.products">
+        <div class="col-xs-4 col-md-4">
+          <h1>{{product.name}}</h1>
+          <h4>{{$index}}</h4>
+         <img ng-src="../../assets/img/{{product.img}}">
+
+         <h2>{{product.price}}</h2>
+            </div>  
+        </div> -->
+
 </section>
  <hr>
 <!--//PRODUCTS END//-->
