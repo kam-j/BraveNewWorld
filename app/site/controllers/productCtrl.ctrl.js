@@ -5,7 +5,7 @@
         .controller('productCtrl', ProductCtrl);
 
 
-    function ProductCtrl(api, productSrv, $stateParams, $uibModal, products,$state) {
+    function ProductCtrl(api, productSrv, $stateParams, $uibModal, products, $state) {
 
         var ctrl = this;
         ctrl.api = api;
@@ -15,8 +15,8 @@
         ctrl.products = products;
         ctrl.$uibModal = $uibModal;
         ctrl.goLogin = goLogin;
-        ctrl.state= $state;
-        ctrl.catFilter="";
+        ctrl.state = $state;
+        ctrl.catFilter = "";
 
         ctrl.cart = [];
         ctrl.animationsEnabled = true;
@@ -24,27 +24,33 @@
 
         ctrl.open = open;
 
-        ctrl.addToCart=addToCart;
+        ctrl.addToCart = addToCart;
 
-        function addToCart(product){
-            var prod={
+        function addToCart(product) {
+
+            console.log('working');
+            var prod = {
                 name: product.name,
                 id: product.id,
                 price: product.price,
-                quantity:1
+                quantity: 1
             }
+            if (ctrl.cart.length > 0) {
+                for (var item in ctrl.cart) {
+                    if (prod.name == ctrl.cart[item].name) {
+                        ctrl.cart[item].quantity++;
+                        console.log(ctrl.cart[item].quantity);
+                    } else {
+                        ctrl.cart.push(prod);
+                        console.log('new prod added', prod);
+                    }
 
-            for(var item in ctrl.cart){
-                if(prod.name==item.name){
-                    item.quantity++;
-                    console.log(item);
                 }
-                else {
-                ctrl.cart.push(prod);
-                console.log(prod);
-                }
-
-            };
+            }
+            else {
+                        ctrl.cart.push(prod);
+                        console.log('new prod added', prod);
+                    }
 
         }
 
@@ -63,7 +69,7 @@
             ctrl.productSrv.addProduct(product);
         }
 
-        
+
         function open() {
             console.log('modal');
             var modalInstance = $uibModal.open({
@@ -90,10 +96,10 @@
 
         function goLogin() {
             console.log('Hi');
-            var ctrl=this;
+            var ctrl = this;
             ctrl.state.go('login');
-            
-          
+
+
         };
 
 
