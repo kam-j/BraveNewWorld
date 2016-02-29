@@ -1,27 +1,25 @@
-<div>
-<table>
-	 <tr>
-      <th> ORDERS </th>
+<div class="orders1">
+<table class="ordersBox">
+	 <h1>Orders</h1>
 
-      <th> &nbsp;</th>
-    </tr>
-
+	
 	<tr ng-repeat="order in ctrl.orders">
-		<td>{{order.id}}</td>
+		<td><strong>Order number: </strong>{{order.id}}</td>
 		
 		<td>
 			<table>
 			<tr ng-repeat="item in order.cart track by $index">
-				<td> {{item.name}}</td>
-				<td>quantity: {{item.quantity}}
+				<td><strong>Name: </strong>{{item.name}}</td>
+				<td><strong>Quantity: </strong>{{item.quantity}}</td>
 			</tr>
 		</table>
 		</td>
 
-		<td>TOTAL: {{order.final_total}}</td>
+		<td><strong>TOTAL: </strong>{{order.final_total | currency}}</td>
 
-		
+		<td> <a ng-click="ctrl.clearOrder(order.id)">Fulfill/Clear Order</a> </td>
 	</tr>
+
 
 </table>
 

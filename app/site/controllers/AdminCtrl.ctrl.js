@@ -15,6 +15,7 @@
         ctrl.passProduct = passProduct;
         ctrl.enable = false;
         ctrl.product = {};
+        ctrl.logout = logout;
 
         ctrl.categories = ctrl.productSrv.categories;
 
@@ -26,6 +27,10 @@
             ctrl.products = ctrl.productSrv.products;
 
         });
+
+        if(!localStorage.authToken){
+            ctrl.$state.go('home');
+        }
 
         function deleteProduct(id) {
             ctrl.productSrv.deleteProduct(id);
@@ -52,5 +57,11 @@
             ctrl.productSrv.updateProduct(product);
         }
 
-    }
+        function logout() {
+            localStorage.clear();
+            ctrl.$state.go('home');
+        }
+
+    }   
+        
 })();

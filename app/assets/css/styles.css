@@ -4,13 +4,19 @@ html{
 
 }
 
+a {
+  color: black;
+}
+
+
+
 .shop-container{
   max-width: 1200px;
   background: white;
   margin-left: 100px;
   margin-right: 100px;
   position: relative;
-  padding: 0 50px;
+  padding: 10px 50px;
 }
 
 /* TOP NAVBAR*/
@@ -61,6 +67,7 @@ html{
 /*CART*/
 .buttonx {
   float: right;
+  color: black;
 }
 
 
@@ -75,7 +82,7 @@ html{
 .category-nav {
   color: darkgrey;
 }
-.category-nav li :hover{
+.category-nav li:hover{
     text-decoration: none;
     color: lightgrey;
 }
@@ -119,6 +126,16 @@ html{
   margin-bottom: 30px;
 }
 
+/*PRODUCT DETAILS*/
+.detail-view1 {
+  position: relative;
+  margin: 20px;
+}
+
+.detail-view1 img {
+  width: 500px;
+
+}
 
 
 /*FOOTER*/

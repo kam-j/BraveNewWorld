@@ -1,0 +1,34 @@
+<!--//PRODUCTS START//-->
+<div class="detail-view1">
+  <div class="buttonx">
+      <a ng-click="ctrl.close()"><i class="fa fa-times"></a></i>
+  </div>
+
+  <div class="row">
+        <div class="clearfix"></div>
+          <div class="col-l-4">
+            <div class="product-img">
+              <img ng-src="assets/img/{{ctrl.product.image}}">
+            </div>
+            <div class="product-name">
+              {{ctrl.product.name | uppercase}}
+            </div>
+            <div class="product-price">
+              {{ctrl.product.price | currency}}
+            </div>
+            <div class="product-description">
+              {{ctrl.product.description}}
+            </div>
+            <!--  <div class="product-category">
+              {{ctrl.product.category}}
+            </div> -->
+            <!-- <div class="product-quantity">
+              {{ctrl.product.quantity}}
+            </div> -->
+        <div>
+
+     <!--  <button type="submit" ng-click="ctrl.getProduct()">{{}}</button> -->
+    </div>
+          </div>
+      </div>
+  </div>

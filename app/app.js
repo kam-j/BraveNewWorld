@@ -72,6 +72,8 @@ app.config(function($stateProvider, $httpProvider,$urlRouterProvider){
     url:'/edit',
     templateUrl:'site/partials/edit_product.html',
   })
+
+
  
 	$httpProvider.interceptors.push(function(){
        return {

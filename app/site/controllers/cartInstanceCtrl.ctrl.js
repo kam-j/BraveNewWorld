@@ -12,7 +12,15 @@
         ctrl.close = close;
         ctrl.checkOut = checkOut;
         ctrl.cartTotal = cartTotal;
+        ctrl.remove=remove;
 
+        function remove(item){
+            for (var index in ctrl.cart){
+                if(ctrl.cart[index].name==item.name){
+                   ctrl.cart= ctrl.cart.slice(0,index).concat(ctrl.cart.slice(index+1));
+                }
+            }
+        }
        
 
         // checkout
@@ -25,7 +33,8 @@
                 final_total: (cartTotal(ctrl.cart) * 1.13).toFixed(2),
             }
             ctrl.productSrv.addOrder(cartObject);
-            ctrl.$uibModalInstance.close();
+            var emptyCart=[];
+            ctrl.$uibModalInstance.close(emptyCart);
         }
 
 
@@ -39,8 +48,8 @@
             return total;
         }
 
-        function close() {
-            ctrl.$uibModalInstance.dismiss();
+        function close(cart) {
+            ctrl.$uibModalInstance.close(cart);
         }
 
 

@@ -1,7 +1,7 @@
 <div class="modal-header">
            
         <div class="buttonx"
-            <a ng-click="ctrl.close()">  <i class="fa fa-times"></a></i>
+            <a ng-click="ctrl.close(ctrl.cart)">  <i class="fa fa-times"></a></i>
         </div>
 
            <h3 class="modal-title">Your Cart. </h3>
@@ -10,12 +10,12 @@
            <ul>
                <li ng-repeat="item in ctrl.cart track by $index">
                <span>
-                    <p>{{ item.name }} {{item.quantity}}</p></span>
+                    <p><strong>Product: </strong> {{ item.name }} <br><strong>Quantity:</strong> {{item.quantity}} <a ng-click="ctrl.remove(item)"><i class="fa fa-trash"></i></a></p></span>
                </li>
                
-               <p>Subtotal: {{ctrl.cartTotal(ctrl.cart) | currency: USD$ }} </p>
+               <p><strong>Subtotal: </strong> {{ctrl.cartTotal(ctrl.cart) | currency: USD$ }} </p>
 
-               <p>Total: {{ctrl.cartTotal(ctrl.cart)*1.13 | currency: USD$ }}</p>
+               <p><strong>Total: </strong>{{ctrl.cartTotal(ctrl.cart)*1.13 | currency: USD$ }}</p>
                
                <li><a ng-click="ctrl.checkOut()"> Checkout <i class="fa fa-credit-card"></i></li></a>
 

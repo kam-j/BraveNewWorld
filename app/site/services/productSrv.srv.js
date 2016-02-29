@@ -17,8 +17,8 @@
         this.addOrder=addOrder;
         this.orders=[];
         this.getOrders=getOrders;
-
-
+        this.deleteOrder=deleteOrder;
+        this.getProduct=getProduct;
 
         this.categories = [
         {
@@ -81,16 +81,40 @@
 
         }
 
+        function deleteOrder(orderId){
+            var srv=this;
+            this.api.request('/orders/' + orderId, {}, 'DEL')
+            .then(function(response){
+                srv.getOrders();
+                srv.$state.go('admin.orders');
+            }) ;           
+            
+
+        }
 
 
         function getProducts() {
             var srv = this;
             return this.api.request('/products', {}, 'GET')
                 .then(function(response) {
+                    console.log(response.data);
                     console.log(response.data.products);
                     srv.products = response.data.products;
                     return response.data.products;
                 });
+        }
+
+        function getProduct(productId) {
+            var srv = this; 
+            console.log("hi2");
+            return this.api.request('/products/'+productId, {}, 'GET')
+            .then(function(response) {
+                    console.log(response.data);
+                    return response.data.product;
+                },function(error){
+                    console.log(error);
+                });
+
         }
 
         
